@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LightHp_official.com</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            background: #f0f0f0;
+            overflow: hidden;
+            position: relative;
+            /* Background animation */
+            background-image: url('https://i.imgur.com/yourAnimatedGif.gif'); /* Replace with your animated GIF URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #ff4d4d; /* Red background */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            z-index: 1; /* Ensures button is on top */
+        }
+
+        button:hover {
+            background-color: #ff1a1a; /* Darker red on hover */
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            z-index: 1; /* Ensures text is on top */
+        }
+    </style>
+</head>
+<body>
+    <button id="copyScriptButton">Get Script</button>
+    <p>Click the Get Script button to get the script</p>
+    <script>
+        document.getElementById('copyScriptButton').addEventListener('click', () => {
+            const scriptContent = `
+_Hawk = "ohhahtuhthttouttpwuttuaunbotwo"
+
+local LightHp = loadstring(game:HttpGet("https://Scirpt_LightHp.com", true))()
+local Window = LightHp:Window({
+    ScriptName = "LightHp.cc (beta)", -- Changed GUI name
+    DestroyIfExists = true, -- if false, gui won't disappear
+    Theme = "Dark" -- Themes: Pink, White, Dark
+})
+
+Window:Close({
+    visibility = true, -- if false, close button will disappear
+    Callback = function()
+        Window:Destroy() -- Destroying Gui Function
+    end,
+})
+
+Window:Minimize({
+    visibility = true, -- if false, minimize button will disappear
+    OpenButton = true, -- Open button visibility
+    Callback = function()
+    end,
+})
+
+-- Create a main tab
+local mainTab = Window:Tab("Main Tab") 
+-- Create a section within the main tab
+local mainSection = mainTab:Section("Main Section")
+
+-- Add a label to the section
+mainSection:Label("Welcome", "This is the main section of the LightHp.cc (beta) GUI.")
+
+-- Add a button to the section for Silent Aim
+local silentAimButton = mainSection:Button("Silent Aim", "Click to load the Silent Aim script", function()
+    loadstring(game:HttpGet("https://Scirpt_LightHp.com/silent-aim"))()
+end)
+
+-- Add a button to the section for Camlock
+local camlockButton = mainSection:Button("Camlock", "Click to load the Camlock script", function()
+    loadstring(game:HttpGet("https://Scirpt_LightHp.com/camlock"))()
+end)
+
+-- Create a scripts tab
+local scriptsTab = Window:Tab("Scripts")
+-- Create a section within the scripts tab
+local scriptsSection = scriptsTab:Section("Scripts Section")
+
+-- Add a label to the scripts section
+scriptsSection:Label("Scripts", "Other script")
+
+-- Optionally, add more elements to the scripts section as needed
+-- Example: Add a button that loads another script
+local exampleScriptButton = scriptsSection:Button("balliware", "Click to load the Balliware script", function()
+    loadstring(game:HttpGet("https://Scirpt_LightHp.com/balliware"))()
+end)
+
+-- Create and show a notification
+local Notifications = LightHp:AddNotifications()
+Notifications:Notification("Thank You", "Thanks for using❤", "Info", 10) -- Info is the type, 10 is the cooldown in seconds
+            `;
+            // Create a temporary textarea element to use for copying the text
+            const textarea = document.createElement('textarea');
+            textarea.value = scriptContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    alert('Script copied to clipboard!');
+                } else {
+                    alert('Failed to copy script.');
+                }
+            } catch (err) {
+                console.error('Failed to copy script: ', err);
+            }
+            document.body.removeChild(textarea);
+        });
+    </script>
+</body>
+</html>
